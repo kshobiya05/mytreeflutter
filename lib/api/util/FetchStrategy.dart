@@ -1,0 +1,4 @@
+enum FetchStrategy{
+  Remote,
+  Local;
+}
