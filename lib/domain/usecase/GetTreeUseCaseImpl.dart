@@ -10,13 +10,12 @@ import '../../api/repositories/RemoteRepository.dart';
 
 class GetTreesUseCaseImpl implements GetTreeUseCase {
 
-  final RemoteRepository remoterepository= DependencyInjection().get<RemoteRepository>(Dependencies.remote.value);
+  final RemoteRepository remoterepository = DependencyInjection().get<RemoteRepository>(Dependencies.remote.value);
   final LocalRepository  localrepository = DependencyInjection().get<LocalRepository>(Dependencies.local.value);
 
   Future<List<Tree>> execute(int start)  async {
 
       var fetchStrategy = await getFetchStrategy();
-      print(fetchStrategy);
 
       if (fetchStrategy == FetchStrategy.Remote){
         final List<Tree> trees = await remoterepository.getTrees(start);

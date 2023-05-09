@@ -1,3 +1,3 @@
 class Constants {
-  static const numOfItems = 15;
+  static const numOfItems = 100;
 }
